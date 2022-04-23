@@ -19,28 +19,30 @@
 </head>
 <body>
 
-    <div class="popup-box">
+    <div class="popup-box visible" id="popup-box">
         <div class="popup-container">
-            <div class="popup-head">
-                <p>Add a new note</p>
-                <i class="uil uil-multiply"></i>
-            </div>
-            <div class="fields">
-                <div class="title-form">
-                    <label for="title">Title</label>
-                    <input type="text" id="title">
+            <div class="popup-wrapper">
+                <div class="popup-head">
+                    <p>Add a new note</p>
+                    <i class="uil uil-multiply" onclick="closePopup()"></i>
                 </div>
-                <div class="description-form">
-                    <label for="description">Title</label>
-                    <textarea id="description"></textarea>
+                <div class="fields">
+                    <div class="title-form">
+                        <label for="title">Title</label>
+                        <input type="text" id="title">
+                    </div>
+                    <div class="description-form">
+                        <label for="description">Description</label>
+                        <textarea id="description"></textarea>
+                    </div>
+                    <button>Add note</button>
                 </div>
-                <button>Add note</button>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <li class="add-note">
+        <li class="add-note" onclick="createNote()">
             <div class="icon"><i class="uil uil-plus"></i></div>
             <p>Add A Note</p>
         </li>
