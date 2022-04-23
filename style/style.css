@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  list-style: none;
+  text-decoration: none;
+  font-style: none;
+}
+
+:root {
+  --blue-color: #557cfb;
+  --white-color: whitesmoke;
+  --black-color: #020202;
+  --transition: transform 200ms ease;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--blue-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .container {
+  width: 90%;
+  margin: 3rem auto 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+  -ms-grid-columns: (260px)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 260px);
+}
+
+body .container li {
+  background: var(--white-color);
+  padding: 2rem;
+  height: 200px;
+  width: 200px;
+  border-radius: 0.5rem;
+}
+
+body .container .add-note {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+  cursor: pointer;
+}
+
+body .container .add-note i {
+  color: var(--blue-color);
+  font-size: 3rem;
+  border: 2px dashed var(--blue-color);
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+body .container .add-note p {
+  font-weight: 600;
+  color: var(--blue-color);
+}
+
+body .container .note-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-content: space-between;
+}
+
+body .container .note-wrapper .details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--black-color);
+}
+
+body .container .note-wrapper .details p {
+  font-weight: 600;
+  color: var(--black-color);
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+body .container .note-wrapper .details span {
+  color: var(--black-color);
+  font-size: 0.9rem;
+}
+
+body .container .note-wrapper .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+body .container .note-wrapper .bottom span {
+  font-size: 0.7rem;
+}
+
+body .container .note-wrapper .bottom .setting {
+  position: relative;
+  cursor: pointer;
+}
+
+body .container .note-wrapper .bottom .setting .setting-sub {
+  position: absolute;
+  top: -3.6rem;
+  right: 0;
+  width: 7rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: var(--white-color);
+  -webkit-box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+body .container .note-wrapper .bottom .setting .setting-sub li {
+  padding: 0.5rem;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: var(--white-color);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+
+body .container .note-wrapper .bottom .setting .setting-sub li i {
+  margin-right: 0.5rem;
+}
+
+body .container .note-wrapper .bottom .setting .setting-sub li:hover {
+  background-color: #efefef;
+  color: var(--blue-color);
+}
+
+body .container .note-wrapper .bottom .setting:hover .setting-sub {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+body .popup-box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=style.css.map */

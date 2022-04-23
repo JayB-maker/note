@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note</title>
+
+    <link rel="stylesheet" href="style/style.css">
+
+    <!-- Poppins Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=DM+Serif+Display&family=Inter:wght@300;400;600;700&family=Montserrat:wght@300;400;700&family=Noto+Serif&family=Nunito+Sans:wght@400;700;800;900&family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Iconscout cdn -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+
+</head>
+<body>
+
+    <div class="popup-box">
+        <div class="popup-container">
+            <div class="popup-head">
+                <p>Add a new note</p>
+                <i class="uil uil-multiply"></i>
+            </div>
+            <div class="fields">
+                <div class="title-form">
+                    <label for="title">Title</label>
+                    <input type="text" id="title">
+                </div>
+                <div class="description-form">
+                    <label for="description">Title</label>
+                    <textarea id="description"></textarea>
+                </div>
+                <button>Add note</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <li class="add-note">
+            <div class="icon"><i class="uil uil-plus"></i></div>
+            <p>Add A Note</p>
+        </li>
+        
+        <li class="note-wrapper">
+            <div class="details">
+                <p>This is a topic</p>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque eos, doloremque omnis a autem consequuntur.</span>
+            </div>
+            <div class="bottom">
+                <span>April 22 2022</span>
+                <div class="setting">
+                    <i class="uil uil-ellipsis-h"></i>
+                    <ul class="setting-sub">
+                        <li><i class="uil uil-pen"></i>Edit</li>
+                        <li><i class="uil uil-trash"></i>Delete</li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
