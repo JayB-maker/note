@@ -1,5 +1,6 @@
 let notes;
 let popupBox = document.getElementById('popup-box'),
+    addBox = document.querySelector('.add-note'),
     noteTitle = document.getElementById('title'),
     noteDescription = document.getElementById('description');
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -10,14 +11,26 @@ let popupBox = document.getElementById('popup-box'),
 
     function closePopup() {
         popupBox.classList.add('visible');
+        noteTitle.value = "";
+        noteDescription.value = "";
     }
 
     function addNote() {
-        notes.push({title: noteTitle.value,
-            description: noteDescription.value,
-            date: months[new Date().getMonth()] + " " + new Date().getDate() + " " + new Date().getFullYear()});   
-            
-        saveToLocalStorage();
+        if(noteTitle.value || noteDescription.value) {
+            notes.push({title: noteTitle.value,
+                description: noteDescription.value,
+                date: months[new Date().getMonth()] + " " + new Date().getDate() + ", " + new Date().getFullYear()});   
+                
+            saveToLocalStorage();
+            document.getElementById("close").onclick();
+            noteTitle.value = "";
+            noteDescription.value = "";
+            render();
+        }
+
+        else{
+            alert('Fields are empty');
+        }
     }
 
     function saveToLocalStorage() {
@@ -30,4 +43,27 @@ let popupBox = document.getElementById('popup-box'),
         notes = noteToGet;
     } else{
         notes = [];
+    }
+
+    function render(){
+        notes.forEach((note) => {
+            let renderHTML = `<li class="note-wrapper">
+                                    <div class="details">
+                                        <p> ${ note.title } </p>
+                                        <span>${ note.description }</span>
+                                    </div>
+                                    <div class="bottom">
+                                        <span>${ note.date }</span>
+                                        <div class="setting">
+                                            <i class="uil uil-ellipsis-h"></i>
+                                            <ul class="setting-sub">
+                                                <li><i class="uil uil-pen"></i>Edit</li>
+                                                <li><i class="uil uil-trash"></i>Delete</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>`;
+
+            addBox.insertAdjacentHTML("afterend", renderHTML);
+        })
     }

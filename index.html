@@ -24,7 +24,7 @@
             <div class="popup-wrapper">
                 <div class="popup-head">
                     <p>Add a new note</p>
-                    <i class="uil uil-multiply" onclick="closePopup()"></i>
+                    <i id="close" class="uil uil-multiply" onclick="closePopup()"></i>
                 </div>
                 <div class="fields">
                     <div class="title-form">
@@ -42,12 +42,12 @@
     </div>
 
     <div class="container">
-        <li class="add-note" onclick="createNote()">
+        <li class="add-note" onclick="createNote()" id="add-note">
             <div class="icon"><i class="uil uil-plus"></i></div>
             <p>Add A Note</p>
         </li>
         
-        <li class="note-wrapper">
+        <!-- <li class="note-wrapper">
             <div class="details">
                 <p>This is a topic</p>
                 <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, exercitationem.</span>
@@ -62,7 +62,7 @@
                     </ul>
                 </div>
             </div>
-        </li>
+        </li> -->
         
         
     </div>
