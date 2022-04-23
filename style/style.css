@@ -45,10 +45,11 @@ body .container {
 
 body .container li {
   background: var(--white-color);
-  padding: 2rem;
+  padding: 2rem 2rem 0;
   height: 200px;
   width: 200px;
   border-radius: 0.5rem;
+  overflow-y: scroll;
 }
 
 body .container .add-note {
@@ -91,6 +92,7 @@ body .container .note-wrapper {
       -ms-flex-direction: column;
           flex-direction: column;
   place-content: space-between;
+  position: relative;
 }
 
 body .container .note-wrapper .details {
@@ -103,7 +105,6 @@ body .container .note-wrapper .details {
           flex-direction: column;
   gap: 0.8rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--black-color);
 }
 
 body .container .note-wrapper .details p {
@@ -119,11 +120,18 @@ body .container .note-wrapper .details span {
 }
 
 body .container .note-wrapper .bottom {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  margin-top: 1rem;
+  padding: 0.5rem 0 1rem;
+  background: var(--white-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   place-content: space-between;
   font-size: 0.8rem;
+  border-top: 1px solid var(--black-color);
   font-weight: 600;
 }
 
@@ -195,6 +203,7 @@ body .container .note-wrapper .bottom .setting:hover .setting-sub {
 body .popup-box.visible {
   -webkit-transform: scale(0);
           transform: scale(0);
+  opacity: 0%;
 }
 
 body .popup-box {
@@ -208,6 +217,7 @@ body .popup-box {
   z-index: 3;
   -webkit-transform: scale(1);
           transform: scale(1);
+  opacity: 100%;
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }

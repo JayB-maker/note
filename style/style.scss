@@ -37,10 +37,11 @@ body{
 
         li{
             background: var(--white-color);
-            padding: 2rem;
+            padding: 2rem 2rem 0;
             height: 200px;
             width: 200px;
             border-radius: 0.5rem;
+            overflow-y: scroll;
         }
 
         .add-note{
@@ -69,13 +70,13 @@ body{
             display: flex;
             flex-direction: column;
             place-content: space-between;
+            position: relative;
 
             .details{
                 display: flex;
                 flex-direction: column;
                 gap: 0.8rem;
                 padding-bottom: 1rem;
-                border-bottom: 1px solid var(--black-color);
 
                 p{
                     font-weight: 600;
@@ -91,9 +92,15 @@ body{
             }
 
             .bottom{
+                position: sticky;
+                bottom: 0;
+                margin-top: 1rem;
+                padding: 0.5rem 0 1rem;
+                background: var(--white-color);
                 display: flex;
                 place-content: space-between;
                 font-size: 0.8rem;
+                border-top: 1px solid var(--black-color);
                 font-weight: 600;
 
                 span{
@@ -155,6 +162,7 @@ body{
 
     .popup-box.visible{
         transform: scale(0);
+        opacity: 0%;
     }
 
     .popup-box{
@@ -167,6 +175,7 @@ body{
         height: 100%;
         z-index: 3;
         transform: scale(1);
+        opacity: 100%;
         transition: var(--transition);
 
 
