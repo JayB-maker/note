@@ -16,6 +16,8 @@ let popupBox = document.getElementById('popup-box'),
     }
 
     function addNote() {
+        document.querySelectorAll('.note-wrapper').forEach((note) => {note.remove()}) //removing already existing notes
+
         if(noteTitle.value || noteDescription.value) {
             notes.push({title: noteTitle.value,
                 description: noteDescription.value,
@@ -41,11 +43,13 @@ let popupBox = document.getElementById('popup-box'),
 
     if(Array.isArray(noteToGet)) {
         notes = noteToGet;
+        render();
     } else{
         notes = [];
     }
 
     function render(){
+        
         notes.forEach((note) => {
             let renderHTML = `<li class="note-wrapper">
                                     <div class="details">
@@ -55,7 +59,7 @@ let popupBox = document.getElementById('popup-box'),
                                     <div class="bottom">
                                         <span>${ note.date }</span>
                                         <div class="setting">
-                                            <i class="uil uil-ellipsis-h"></i>
+                                            <i class="uil uil-ellipsis-h" onclick="openSettings(this)"></i>
                                             <ul class="setting-sub">
                                                 <li><i class="uil uil-pen"></i>Edit</li>
                                                 <li><i class="uil uil-trash"></i>Delete</li>
@@ -66,4 +70,8 @@ let popupBox = document.getElementById('popup-box'),
 
             addBox.insertAdjacentHTML("afterend", renderHTML);
         })
+    }
+
+    function openSettings(elem) {
+        elem.parentElement.classList.add("open");
     }

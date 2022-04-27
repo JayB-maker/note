@@ -139,6 +139,11 @@ body .container .note-wrapper .bottom span {
   font-size: 0.7rem;
 }
 
+body .container .note-wrapper .bottom .setting.open .setting-sub {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 body .container .note-wrapper .bottom .setting {
   position: relative;
   cursor: pointer;
@@ -193,11 +198,6 @@ body .container .note-wrapper .bottom .setting .setting-sub li i {
 body .container .note-wrapper .bottom .setting .setting-sub li:hover {
   background-color: #efefef;
   color: var(--blue-color);
-}
-
-body .container .note-wrapper .bottom .setting:hover .setting-sub {
-  -webkit-transform: scale(1);
-          transform: scale(1);
 }
 
 body .popup-box.visible {
