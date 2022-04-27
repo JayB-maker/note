@@ -297,6 +297,7 @@ body .popup-box .popup-container .popup-wrapper .fields :where(input, textarea) 
 
 body .popup-box .popup-container .popup-wrapper .fields textarea {
   height: 120px;
+  font-family: 'Poppins', sans-serif;
 }
 
 body .popup-box .popup-container .popup-wrapper .fields button {

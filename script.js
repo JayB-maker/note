@@ -7,6 +7,7 @@ let popupBox = document.getElementById('popup-box'),
 
     function createNote() {
         popupBox.classList.remove('visible');
+        noteTitle.focus();
     }
 
     function closePopup() {
@@ -16,7 +17,6 @@ let popupBox = document.getElementById('popup-box'),
     }
 
     function addNote() {
-        document.querySelectorAll('.note-wrapper').forEach((note) => {note.remove()}) //removing already existing notes
 
         if(noteTitle.value || noteDescription.value) {
             notes.push({title: noteTitle.value,
@@ -49,8 +49,11 @@ let popupBox = document.getElementById('popup-box'),
     }
 
     function render(){
+
+        document.querySelectorAll('.note-wrapper').forEach((note) => {note.remove()}) //removing already existing notes
+
         
-        notes.forEach((note) => {
+        notes.forEach((note, index) => {
             let renderHTML = `<li class="note-wrapper">
                                     <div class="details">
                                         <p> ${ note.title } </p>
@@ -62,7 +65,7 @@ let popupBox = document.getElementById('popup-box'),
                                             <i class="uil uil-ellipsis-h" onclick="openSettings(this)"></i>
                                             <ul class="setting-sub">
                                                 <li><i class="uil uil-pen"></i>Edit</li>
-                                                <li><i class="uil uil-trash"></i>Delete</li>
+                                                <li onclick="deleteNote(${ index })" ><i class="uil uil-trash"></i>Delete</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -74,4 +77,18 @@ let popupBox = document.getElementById('popup-box'),
 
     function openSettings(elem) {
         elem.parentElement.classList.add("open");
+
+        document.addEventListener("click", (e) => {
+            e.preventDefault();
+            if(e.target.tagName !== "I" || e.target !== elem) {
+                elem.parentElement.classList.remove("open");
+            }
+
+        })
+    }
+
+    function deleteNote(noteId) {
+        notes.splice(noteId, 1);
+        saveToLocalStorage();
+        render();
     }
