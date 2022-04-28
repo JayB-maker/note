@@ -218,8 +218,8 @@ body .popup-box {
   -webkit-transform: scale(1);
           transform: scale(1);
   opacity: 100%;
-  -webkit-transition: var(--transition);
-  transition: var(--transition);
+  -webkit-transition: 100ms;
+  transition: 100ms;
 }
 
 body .popup-box .popup-container {

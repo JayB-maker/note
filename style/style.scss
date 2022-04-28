@@ -174,7 +174,7 @@ body{
         z-index: 3;
         transform: scale(1);
         opacity: 100%;
-        transition: var(--transition);
+        transition: 100ms;
 
 
         .popup-container{
